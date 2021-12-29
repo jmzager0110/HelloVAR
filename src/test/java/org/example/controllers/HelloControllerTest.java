@@ -1,5 +1,6 @@
 package org.example.controllers;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,6 +19,7 @@ class HelloControllerTest {
 
 
     @Test()
+    @DisplayName("Verify greeting message")
     void testHelloMessage(){
         assertThat(testRestTemplate.getForObject("http://localhost:" + port, String.class)).contains("Hello");
 //        assertThat(testRestTemplate.getForObject("http://localhost:" + port, String.class)).contains("Goodbye");
